@@ -11,38 +11,47 @@
 }
 
 /* =========================
-   BASE
+   HTML / BODY FIX (iOS SAFE)
 ========================= */
 
-html, body {
-    width: 100%;
+html {
     height: 100%;
-    overflow-x: hidden;
-    background: #0f172a;
-    color: white;
+    overflow: hidden;
 }
-
-/* =========================
-   BODY LAYOUT (ПК)
-========================= */
 
 body {
+    height: 100%;
+    overflow: hidden;
+    background: #0f172a;
+    color: white;
+
+    /* safe area iPhone */
+    padding: env(safe-area-inset-top)
+             env(safe-area-inset-right)
+             env(safe-area-inset-bottom)
+             env(safe-area-inset-left);
+
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
 }
 
 /* =========================
-   CONTAINER (КОМПАКТНЫЙ)
+   APP WRAPPER
 ========================= */
 
 .container {
     width: 100%;
     max-width: 800px;
+
+    /* ВАЖНО: фикс iOS overflow */
+    max-height: 100vh;
+    overflow: hidden;
+
     background: #1e293b;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 18px;
+
+    padding: 18px;
 }
 
 /* =========================
@@ -50,9 +59,9 @@ body {
 ========================= */
 
 h1 {
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 /* =========================
@@ -62,21 +71,21 @@ h1 {
 .checkbox-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
 /* =========================
-   CHECKBOX ITEM
+   ITEM
 ========================= */
 
 .checkbox-item {
     background: #334155;
     border-radius: 10px;
-    padding: 12px;
+    padding: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 /* =========================
@@ -84,14 +93,14 @@ h1 {
 ========================= */
 
 .field {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .field label {
     display: block;
-    margin-bottom: 6px;
-    color: #cbd5e1;
+    margin-bottom: 5px;
     font-size: 13px;
+    color: #cbd5e1;
 }
 
 /* =========================
@@ -109,24 +118,25 @@ select {
 }
 
 /* =========================
-   PRICE
+   PRICE BOX
 ========================= */
 
 .price-box {
-    margin-top: 15px;
+    margin-top: 12px;
     text-align: center;
     background: #111827;
-    padding: 20px;
-    border-radius: 16px;
+    padding: 16px;
+    border-radius: 14px;
 }
 
 .price-title {
+    font-size: 13px;
     color: #94a3b8;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .price {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: bold;
     color: #22c55e;
 }
@@ -138,7 +148,7 @@ select {
 .login-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,11 +156,12 @@ select {
 }
 
 .login-box {
+    width: 90%;
+    max-width: 320px;
     background: white;
     color: black;
-    padding: 20px;
+    padding: 18px;
     border-radius: 12px;
-    width: 300px;
     text-align: center;
 }
 
@@ -170,51 +181,23 @@ select {
     color: white;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
-}
-
-#loginError {
-    color: red;
-    font-size: 13px;
-    margin-top: 8px;
 }
 
 /* =========================
-   DESKTOP FIX (нет скролла)
-========================= */
-
-.container {
-    max-height: 95vh;
-    overflow: hidden;
-}
-
-/* =========================
-   MOBILE
+   MOBILE TWEAKS
 ========================= */
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 15px;
+    h1 {
+        font-size: 18px;
     }
 
     .checkbox-grid {
         grid-template-columns: 1fr;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
     .price {
-        font-size: 28px;
-    }
-
-    select {
-        font-size: 14px;
+        font-size: 26px;
     }
 }
