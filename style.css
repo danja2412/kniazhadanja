@@ -1,0 +1,233 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    background: #0f172a;
+    color: white;
+    padding: 40px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #1e293b;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* =========================
+   CHECKBOX GRID
+========================= */
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   CHECKBOX ITEM
+========================= */
+
+.checkbox-item {
+    background: #334155;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.checkbox-item:hover {
+    background: #475569;
+}
+
+/* =========================
+   FIELDS
+========================= */
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* =========================
+   SELECT
+========================= */
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #334155;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+/* =========================
+   PRICE BOX
+========================= */
+
+.price-box {
+    margin-top: 25px;
+    text-align: center;
+    background: #111827;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.price-title {
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 42px;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+/* =========================
+   LOGIN OVERLAY
+========================= */
+
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-box {
+    background: white;
+    color: black;
+    padding: 25px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    animation: pop 0.25s ease;
+}
+
+.login-box h2 {
+    margin-bottom: 15px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #2c7be5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background: #1a5fd0;
+}
+
+#loginError {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes pop {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+
+    select {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Калькулятор цін</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- ===================== -->
+<!-- LOGIN -->
+<!-- ===================== -->
+
+<div id="loginOverlay" class="login-overlay">
+
+    <div class="login-box">
+
+        <h2>Вхід в систему</h2>
+
+        <input type="text" id="login" placeholder="Логін">
+
+        <input type="password" id="password" placeholder="Пароль">
+
+        <button onclick="checkLogin()">Увійти</button>
+
+        <p id="loginError"></p>
+
+    </div>
+
+</div>
+
+<!-- ===================== -->
+<!-- MAIN APP -->
+<!-- ===================== -->
+
+<div class="container">
+
+    <h1>Калькулятор цін</h1>
+
+    <!-- ===================== -->
+    <!-- CLIENT TYPE -->
+    <!-- ===================== -->
+
+    <div class="checkbox-grid">
+
+        <label class="checkbox-item">
+            <input type="checkbox" id="jur" class="client-only">
+            Юридична особа
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" id="fiz" class="client-only">
+            Фізична особа
+        </label>
+
+        <!-- ===================== -->
+        <!-- TAXI -->
+        <!-- ===================== -->
+
+        <label class="checkbox-item">
+            <input type="checkbox" id="taxi">
+            Таксі
+        </label>
+
+        <!-- ===================== -->
+        <!-- OPTIONS -->
+        <!-- ===================== -->
+
+        <label class="checkbox-item">
+            <input type="checkbox" class="exclusive-option" value="09">
+            Знижка 0.9
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" class="exclusive-option" value="095">
+            Знижка 0.95
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" class="exclusive-option" value="ts2">
+            ТС 2
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" class="exclusive-option" value="kv27">
+            КВ 27
+        </label>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- ZONE -->
+    <!-- ===================== -->
+
+    <div class="field">
+
+        <label>Зона</label>
+
+        <select id="zone">
+
+            <option value="">Виберіть зону</option>
+
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="2.1">2.1</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="4.1">4.1</option>
+            <option value="4.2">4.2</option>
+            <option value="5">5</option>
+            <option value="5.1">5.1</option>
+            <option value="5.2">5.2</option>
+            <option value="6">6</option>
+
+        </select>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- VEHICLE TYPE -->
+    <!-- ===================== -->
+
+    <div class="field">
+
+        <label>Тип ТС</label>
+
+        <select id="vehicleType">
+
+            <option value="">Виберіть тип ТС</option>
+
+            <!-- сюда добавишь свои 22 типа -->
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="B3">B3</option>
+            <option value="B4">B4</option>
+            <option value="B5">B5</option>
+
+        </select>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- PRICE -->
+    <!-- ===================== -->
+
+    <div class="price-box">
+
+        <div class="price-title">Вартість</div>
+
+        <div class="price" id="price">---</div>
+
+    </div>
+
+</div>
+
+<!-- XLSX -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
